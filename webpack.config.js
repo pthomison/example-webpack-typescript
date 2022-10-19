@@ -10,7 +10,12 @@ var loadingRules = [
     	'style-loader',
       'css-loader'
     ]
-  }
+  },
+  {
+    test: /\.tsx?$/,
+    use: 'ts-loader',
+    exclude: /node_modules/,
+  },
 
 ]
 
@@ -18,7 +23,7 @@ var loadingRules = [
 
 module.exports = {
 	entry: {
-		index: './websrc/index.js',
+		index: './websrc/index.ts',
 	},
 	output: {
     filename: '[name]-[chunkhash].js',
